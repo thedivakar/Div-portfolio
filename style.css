@@ -1,0 +1,526 @@
+*{
+    scrollbar-width: thin;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style : normal;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li {
+    height: 60px;
+}
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+nav a.opt:hover {
+    background-color: rgb(226, 220, 220);
+}
+nav li:first-child {
+    margin-right: auto;
+    background-color: white;
+}
+.logo {
+    
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(23, 23, 27);
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(202, 195, 195, 0.312);
+    backdrop-filter: blur(100px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar a {
+    width: 100%;
+}
+.menu-button {
+    display: none;
+}
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(240, 239, 239);
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+    padding: 30px 12% 0;
+}
+.img-pic {
+    display: none;
+}
+.home-content h3{
+    font-size: 42px;
+}
+.home-content h1{
+    font-size: 54px;
+    line-height: 1.2;
+}
+.home-content p{
+    font-size: 18px;
+    margin: 25px 0 30px;
+}
+.skills {
+    width: 100%;
+    min-height: 20vh;
+    background-color: rgb(240, 239, 239);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skill-icons {
+    align-items: center;
+    color: #767676;
+    display: flex;
+    font-size: 1.7rem;
+    position: absolute;
+}
+.skill-icons p {
+    border-right: 2px solid rgba(45, 46, 50, .5);
+    color: #2d2e32;
+    font-weight: 600;
+    margin-right: 7rem;
+    padding-right: 5rem;
+}
+.skill-icons ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    list-style: none;
+}
+.skill-icons ul li {
+    transition: 1s;
+    cursor: pointer;
+}
+.skill-icons li:hover {
+    transform: scale(1.3);
+    z-index: 2;
+}
+.btn-box {
+    width: 345px;
+    display: flex;
+    gap: 2em;
+}
+.btn-1 {
+    padding: 15px 28px;
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn-1:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+.imgbox img {
+    border-radius: 50%;
+    width: 320px;
+}
+.about {
+    width: 100%;
+    min-height: 80vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12% 0;
+}
+.img-about img {
+    width: 420px;
+}
+.about-content h1 {
+    font-size: 52px;
+}
+.about-content h2 {
+    font-size: 46px;
+}
+.about-content p {
+    font-size: 18px;
+}
+.projects {
+    width: 100%;
+    min-height: 65vh;
+    background-color: rgb(240, 239, 239);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12% 0;
+}
+.content-proj h1 {
+    font-size: 50px;
+    text-align: center;
+}
+.projects-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-1 {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.project-1:hover {
+    transform: translateY(-5px);
+}
+.pro-img1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.img-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: white;
+}
+.overlay p {
+    padding-bottom: 20px;
+}
+.overlay a button {
+    padding: 8px 16px;
+    border: none;
+    background-color: black;
+    font-weight: 600;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.overlay a button:hover {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border: 2px solid black;
+}
+.img-container {
+    position: relative;
+    height: 240px;
+    width: 360px;
+}
+
+.contact {
+    width: 100%;
+    min-height: 60vh;
+    margin: 0 auto;
+    max-width: 110rem;
+    padding: 30px 12% 0;
+}
+.hit-cont h2 {
+    margin-top: 2rem;
+    font-size: 36px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.cont-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8rem;
+    margin-top: 6rem;
+}
+.contact_icon-box {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+.contact_icon-box span {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: #147efb;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    width: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.contact-info a{
+    text-decoration: none;
+    color: black;
+}
+.contact-info a:hover {
+    color: rgb(88, 88, 212);
+}
+footer {
+    background-color: #2d2e32;
+    padding: 4rem 0;
+    width: 100%;
+}
+.content-copyrights {
+    margin: 0 auto;
+    max-width: 107rem;
+    padding: 0 4rem;
+}
+.foot-cr {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+footer h3 {
+    color: #fff;
+    font-size: 1.1rem;
+}
+.foot-social img {
+    width: 40px;
+    margin: 8px;
+}
+@media (max-width: 800px) {
+    .hideonmobile {
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+    .logo {
+        font-size: 28px;
+    }
+    li {
+        display: list-item;
+        unicode-bidi: isolate;
+    }
+    nav li a {
+        cursor: pointer;
+    }
+    .home {
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgb(240, 239, 239);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 10% 10px;
+    }
+    .img-pic {
+        display: block;
+        width: 230px;
+        margin: auto;
+        user-select: none;
+    }
+    .imgbox-1{
+        margin-top: 5rem;
+    }
+    .home-content{
+        text-align: center;
+    }
+    .home-content h3{
+        padding-top: 2rem;
+        font-size: 30px;
+    }
+    .home-content h1{
+        font-size: 40px;
+        line-height: 1.2;
+    }
+    .home-content p{
+        font-size: 14px;
+        margin: 14px 0 14px;
+    }
+    
+    .btn-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        padding-top: 20px;
+    }
+    .btn-1 {
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+    .btn-1:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+    }
+    .imgbox img {
+        display: none;
+    }
+    .skills {
+        width: 100%;
+        min-height: 32vh;
+    }
+    .skill-icons {
+        flex-direction: column;
+        position: static;
+    }
+    .skill-icons p {
+        border-bottom: 2px solid rgba(45, 46, 50, .5);
+        border-right: none;
+        margin-bottom: 3rem;
+        margin-right: 0;
+        padding-bottom: 1rem;
+        padding-right: 0;
+    }
+    .skill-icons ul {
+        justify-content: center;
+    }
+    .about {
+        width: 100%;
+        min-height: 84vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3em;
+        padding: 10px 12% 0;
+    }
+    .img-about img {
+        width: 280px;
+    }
+    .about-content {
+        text-align: center;
+    }
+    .about-content h1 {
+        font-size: 40px;
+    }
+    .about-content h2 {
+        font-size: 25px;
+    }
+    .about-content p {
+        font-size: 14px;
+    }
+    .projects {
+        width: 100%;
+        min-height: 60vh;
+    }
+    .content-proj h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .contact {
+        width: 100%;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;;
+        padding: 10px 10% 0;
+    }
+    .content-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cont {
+        text-align: center;
+    }
+    .cont-icons {
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+    }
+    footer {
+        background-color: #2d2e32;
+        padding: 3rem 0;
+        width: 100%;
+    }
+    .foot-cr {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -1rem;
+    }
+    .foot-cr h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+    .foot-social img {
+        width: 30px;
+        margin: 8px;
+        padding-top: 10px;
+    }
+}
+@media (max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+}
